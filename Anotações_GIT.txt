@@ -1,0 +1,55 @@
+Comandos básicos de terminal para usuários Windows:
+
+cd + nome pasta: abre o terminal na pasta especificada;
+cd/ : vai para o diretório raiz do sistema operacional;
+cd + .. : Volta um nível na navegaçção de pastas;
+dir: lista arquivos da pasta atual;
+mkdir + nome pasta: cria uma pasta com o nome especificado;
+cls: limpa o console do terminal;
+echo > + nome arquivo com extensão: cria um arquivo com o nome e extensão especificado;
+del + nome pasta: exclui os arquivos que estiverem na pasta;
+rmdir + nome pasta: exclui a pasta( pode-se usar as flags /S /Q para forçar a exclusão);
+
+
+Configurando chave SSh:
+Passo 1 - No terminal bash do git digitar:
+ssh-keygen -t ed25519 -C + email que usa no git
+
+Passo 2 - Ir na pasta que foi criado as chaves pelo comando anterior (no console logo apos criadas as chaves aparece 
+este caminho) usar o comando de listar arquivos da pasta e achar a chave com extensão .pub;
+
+Passo 3 - Com o seguinte comando abrir o conteúdo da chave e copia-lo: 
+cat + numero da chave pub;
+
+Passo 4 - No Github, ir na sessão de criação de chaves e criar uma chave e colar o conteúdo copiado da chave anterior 
+no campo correspondente a ela;
+
+Passo 5 - No terminal bash usar o seguinte comando para iniciar o agente ssh:
+eval $(ssh-agent)
+
+Passo 6 - Iniciar agente ssh com o comando:
+eval $(ssh-agent -s)
+
+Passo 6 - Adicionar a chave privada com o comando:
+ssh-add + caminho da chave privada(ela fica no mesmo local que a .pub)
+
+
+Comandos básicos GIT:
+
+-git init: inicia o versionamento do repositório na pasta em que foi executado;
+-ls -a: comando que permite listar pastas ocultas;
+-git config --global user.email "seu_email": seta de forma global seu email de usuário;
+-git config --global user.name "seu nome": seta de forma global seu nome de usuário;
+-git add + nome_arquivo : comando que adiciona arquivos para versionamento;
+-git add *: comando que adiciona todos os arquivos da pasta para serem versionadas pelo git;
+-git commit -m "sua_mensagem": comando que efetiva definitivamente o versionamento do arquivo;
+-git status: verifica o estado atual do versioanmento dos arquivos(vwrifica se há alterações feitas e não commitadas ou adicionadas)
+-git config --list : lista cofigurações do git;
+-git config --global -unset user.email: elimina o email cadastrado se houver;
+-git remote add origin + link do repositório do github: adiciona um repositório que esta no github na sua máquina local;
+-git remote -v : lista repositórios remotos;
+-git push origin master : envia arquivos do repositório local para o remoto;
+-git pull origin master: puxa arquivos do repositório remoto (geralmente usado para resolver problemas de conflitos de branches);
+
+
+  
